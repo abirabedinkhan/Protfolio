@@ -3,22 +3,22 @@
 This is a Flask and MySQL-powered Portfolio website, combining the flexibility of Flask with the robustness of MySQL for data management. It serves as a dynamic platform for showcasing personal or professional achievements.
 
 ## Run the App
-```
+```bash
 git clone https://github.com/abirabedinkhan/Protfolio
 ```
 ### Create a virtual environment
-```
+```bash
 python3 -m venv .venv
 source .venv/bin/activate # linux & mac only
 ```
 
 ### Setup the project by running the script
 Run this script
-```
+```bash
 python3 setup_conf.py
 ```
 You will be prompted to set various configurations:
-```
+```log
 [+] Welcome to Portfolio configuration!!!
 
 [+] Installing requirements
@@ -57,6 +57,6 @@ After completing the configuration, a `config.json` file will be generated in yo
 Feel free to modify the configurations in the `config.json` file as needed.
 
 ### Finally, run the application
-```
+```bash
 python3 app.py
 ```
