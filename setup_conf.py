@@ -2,6 +2,7 @@ import re
 import json
 import hashlib
 import binascii, os
+import pip
 
 def check_host(host, illegal_char, type):
     host_regex = r"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|localhost"
@@ -19,6 +20,15 @@ def check_host(host, illegal_char, type):
                 if type == "mysql": host = "localhost"
                 elif type == "server": host = "0.0.0.0"
     return host
+
+def install_requirements():
+    with open('requirements.txt', 'r') as requirements:
+        requirements = requirements.readlines()
+        requirements = [x.replace('\n', '') if x != None else "" for x in requirements]
+        requirements = requirements.insert(0, 'install')
+        
+    print("[+] Installing requirements")
+    pip.main(requirements)
 
 def main():
     print("[+] Welcome to Portfolio configuration!!!")
